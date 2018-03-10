@@ -3,10 +3,10 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Adailson primeira API' });
 });
 
-/* GET all customers */
+//Select todos customers
 router.get('/customers', function (req, res, next) {
     var db = require('../db');
     var Customer = db.Mongoose.model('customers', db.customersSchema, 'customers');
@@ -15,8 +15,7 @@ router.get('/customers', function (req, res, next) {
        res.end();
     });
 });
-
-/* GET ONE customers. */
+//Select um unico customers
 router.get('/customers/:id', function (req, res, next) {
     var db = require('../db');
     var Customer = db.Mongoose.model('customers', db.CustomerSchema, 'customers');
@@ -26,7 +25,7 @@ router.get('/customers/:id', function (req, res, next) {
     });
 });
 
-/* POST ONE customer. */
+//Insert customers
 router.post('/customers/', function (req, res, next) {
     var db = require('../db');
     var Customer = db.Mongoose.model('customers', db.CustomerSchema, 'customers');
@@ -41,8 +40,7 @@ router.post('/customers/', function (req, res, next) {
         res.end();
     });
 });
-
-/* PUT ONE customer. */
+//Edite um unico customers
 router.put('/customers/:id', function (req, res, next) {
     var db = require('../db');
     var Customer = db.Mongoose.model('customers', db.CustomerSchema, 'customers');
@@ -56,9 +54,7 @@ router.put('/customers/:id', function (req, res, next) {
         res.end();
     });
 });
-
- 	
-/* DELETE ONE customer. */
+//Delete um unico customers
 router.delete('/customers/:id', function (req, res, next) {
     var db = require('../db');
     var Customer = db.Mongoose.model('customers', db.CustomerSchema, 'customers');
